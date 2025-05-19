@@ -1,0 +1,8 @@
+blender_path = ""
+ide_path = ""
+current_settings_file = "C:\\Users\\Mythical\\Documents\\GitHub\\tempo_gui\\assets\\base\\presets\\default\\settings.json"
+settings_files = ["C:\\Users\\Mythical\\Documents\\GitHub\\tempo_gui\\assets\\base\\presets\\default\\settings.json"]
+app_x_position = 711.2
+app_y_position = 150.4
+app_width = 364.0
+app_height = 583.2
