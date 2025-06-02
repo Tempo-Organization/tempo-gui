@@ -5,10 +5,9 @@ import shutil
 import pathlib
 import tomlkit
 import platform
-import pygetwindow as gw
 from screeninfo import get_monitors
 
-from tempo_gui import file_io, local_tempo
+from tempo_gui import file_io, tempo
 
 
 has_inited_settings = False
@@ -33,8 +32,8 @@ def make_settings_file():
 
     toml_str = tomlkit.dumps(settings)
 
-    if os.path.isdir(str(local_tempo.get_default_preset_directory())):
-        shutil.rmtree(str(local_tempo.get_default_preset_directory()))
+    if os.path.isdir(str(tempo.get_default_preset_directory())):
+        shutil.rmtree(str(tempo.get_default_preset_directory()))
 
     with open(SETTINGS_FILE, "w") as f:
         f.write(toml_str)
@@ -98,7 +97,7 @@ def get_settings() -> tomlkit.TOMLDocument:
 
 def get_default_settings_path() -> pathlib.Path:
     return pathlib.Path(
-        os.path.normpath(f"{local_tempo.get_default_preset_directory()}/settings.json")
+        os.path.normpath(f"{tempo.get_default_preset_directory()}/settings.json")
     )
 
 
@@ -110,11 +109,11 @@ def set_current_tempo_settings_file(settings_path: pathlib.Path):
 
 
 def create_initial_tempo_settings():
-    if os.path.isdir(local_tempo.get_default_preset_directory()):
-        shutil.rmtree(local_tempo.get_default_preset_directory())
+    if os.path.isdir(tempo.get_default_preset_directory()):
+        shutil.rmtree(tempo.get_default_preset_directory())
     shutil.copytree(
-        local_tempo.get_tempo_preset_template_dir(),
-        local_tempo.get_default_preset_directory(),
+        tempo.get_tempo_preset_template_dir(),
+        tempo.get_default_preset_directory(),
     )
     set_current_tempo_settings_file(get_default_settings_path())
 
@@ -185,21 +184,20 @@ def get_default_height() -> float:
 def get_default_app_position(title: str) -> tuple[int, int]:
     time.sleep(0.01)
     try:
-        win = gw.getWindowsWithTitle(title)[0]
-        monitor = get_monitors()[0]
+        win_width = 800
+        win_height = 600
 
+        monitor = get_monitors()[0]
         screen_width = monitor.width
         screen_height = monitor.height
+        screen_x = monitor.x
+        screen_y = monitor.y
 
-        win_width = win.width
-        win_height = win.height
-
-        x = monitor.x + (screen_width - win_width) // 2
-        y = monitor.y + (screen_height - win_height) // 2
+        x = screen_x + (screen_width - win_width) // 2
+        y = screen_y + (screen_height - win_height) // 2
 
         return (x, y)
-    except IndexError:
-        # (f"No window found with title '{title}'")
+    except Exception:
         return (480, 240)
 
 

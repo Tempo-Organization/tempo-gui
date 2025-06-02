@@ -25,9 +25,9 @@ classifiers = [
 	  "flet",
 	  "requests",
 	  "screeninfo",
-	  "pygetwindow",
-	  "tempo_core @ git+https://github.com/Tempo-Organization/tempo_core"
-	]
+	  "tempo_core @ git+https://github.com/Tempo-Organization/tempo_core",
+	  "pywin32"
+]
 
 [tool.hatch.envs.dev]
 dependencies = [

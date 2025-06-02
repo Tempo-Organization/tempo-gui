@@ -167,3 +167,6 @@ assets/base/tempo_gui.exe
 /src/tempo_gui/presets
 /assets/base/presets
 src/tempo_gui/settings.toml
+/assets/base/assets/spaghetti
+/assets/base/assets/umodel
+/src/tempo_gui/assets/umodel

@@ -7,3 +7,5 @@ Test:
 
     Automated Builds via ci
     reupload whole project under ver 0.0.1 under tempo org
+
+    running test mods all and run game seem to mess up the config in exe mode
