@@ -11,6 +11,7 @@ import tempo_core
 import tempo_core.app_runner
 import tempo_core.data_structures
 import tempo_core.file_io
+import tempo_core.logger
 import tempo_core.main_logic
 import tempo_core.programs
 import tempo_core.programs.unreal_engine
@@ -20,7 +21,7 @@ from tempo_gui import file_io
 from tempo_gui import settings
 from tempo_gui.logger import Logger
 from tempo_gui import initialization
-from tempo_gui import local_tempo as tempo_gui_tempo
+from tempo_gui import tempo as tempo
 
 
 original_webbrowser_open = webbrowser.open
@@ -28,7 +29,7 @@ original_webbrowser_open = webbrowser.open
 
 def get_settings_path_suffix_from_full_path(settings_path: pathlib.Path) -> str:
     base_directory = pathlib.Path(
-        os.path.dirname(tempo_gui_tempo.get_default_preset_directory())
+        os.path.dirname(tempo.get_default_preset_directory())
     )
     path = os.path.normpath(str(settings_path.relative_to(base_directory)))
     return path
@@ -84,7 +85,7 @@ def add_github_and_unreal_docs_row(page: ft.Page):
 
 def stove_button_was_clicked():
     tempo_core.main_logic.install_stove(
-        output_directory=f"{tempo_gui_tempo.get_tempo_gui_assets_directory()}/stove",
+        output_directory=f"{tempo.get_tempo_gui_assets_directory()}/stove",
         run_after_install=True,
     )
 
@@ -92,7 +93,7 @@ def stove_button_was_clicked():
 def spaghetti_button_was_clicked():
     tempo_core.main_logic.install_spaghetti(
         output_directory=os.path.normpath(
-            f"{tempo_gui_tempo.get_tempo_gui_assets_directory()}/spaghetti"
+            f"{tempo.get_tempo_gui_assets_directory()}/spaghetti"
         ),
         run_after_install=True,
     )
@@ -110,7 +111,7 @@ def add_stove_and_spaghetti_row(page: ft.Page):
 
 def uasset_gui_button_was_clicked():
     tempo_core.main_logic.install_uasset_gui(
-        output_directory=f"{tempo_gui_tempo.get_tempo_gui_assets_directory()}/uasset_gui",
+        output_directory=f"{tempo.get_tempo_gui_assets_directory()}/uasset_gui",
         run_after_install=True,
     )
 
@@ -118,7 +119,7 @@ def uasset_gui_button_was_clicked():
 def kismet_analyzer_button_was_clicked():
     tempo_core.main_logic.install_kismet_analyzer(
         output_directory=os.path.normpath(
-            f"{tempo_gui_tempo.get_tempo_gui_assets_directory()}/kismet_analyzer"
+            f"{tempo.get_tempo_gui_assets_directory()}/kismet_analyzer"
         ),
         run_after_install=True,
     )
@@ -136,14 +137,14 @@ def add_uasset_gui_and_kismet_analyzer_row(page: ft.Page):
 
 def fmodel_button_was_clicked():
     tempo_core.main_logic.install_fmodel(
-        output_directory=f"{tempo_gui_tempo.get_tempo_gui_assets_directory()}/fmodel",
+        output_directory=f"{tempo.get_tempo_gui_assets_directory()}/fmodel",
         run_after_install=True,
     )
 
 
 def umodel_button_was_clicked():
     tempo_core.main_logic.install_umodel(
-        output_directory=f"{tempo_gui_tempo.get_tempo_gui_assets_directory()}/umodel",
+        output_directory=f"{tempo.get_tempo_gui_assets_directory()}/umodel",
         run_after_install=True,
     )
 
@@ -245,6 +246,10 @@ def add_tempo_dir_and_persistent_mods_dir_row(page: ft.Page):
     )
 
 
+def test():
+    tempo_core.main_logic.run_game(toggle_engine=False)
+
+
 def add_test_mods_all_and_run_game_row(page: ft.Page):
     add_button_row(
         page,
@@ -252,7 +257,7 @@ def add_test_mods_all_and_run_game_row(page: ft.Page):
             "Test Mods All": lambda e: tempo_core.main_logic.test_mods_all(
                 toggle_engine=False, use_symlinks=False
             ),
-            "Run Game": lambda e: tempo_core.main_logic.run_game(toggle_engine=False),
+            "Run Game": lambda e: test(),
         },
     )
 
@@ -385,9 +390,9 @@ def add_button_clicked(event: ft.ControlEvent):
     settings.add_settings_files_to_list(
         settings.get_settings(), [pathlib.Path(full_path)]
     )
-    dir_to_copy_from = str(tempo_gui_tempo.get_tempo_preset_template_dir())
+    dir_to_copy_from = str(tempo.get_tempo_preset_template_dir())
     dir_to_copy_to = os.path.normpath(
-        f"{os.path.dirname(str(tempo_gui_tempo.get_tempo_gui_assets_directory()))}/presets/{settings_path_label_text.value.split(os.sep)[0]}"
+        f"{os.path.dirname(str(tempo.get_tempo_gui_assets_directory()))}/presets/{settings_path_label_text.value.split(os.sep)[0]}"
     )
     if os.path.isdir(dir_to_copy_to):
         shutil.rmtree(dir_to_copy_to)

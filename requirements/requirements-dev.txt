@@ -6,7 +6,7 @@
 # - pyinstaller
 # - py_project_dev_tools@ git+https://github.com/Mythical-Github/py_project_dev_tools
 # - flet
-# - pygetwindow
+# - pywin32
 # - requests
 # - screeninfo
 # - tempo-core@ git+https://github.com/Tempo-Organization/tempo_core
@@ -31,9 +31,9 @@ charset-normalizer==3.4.2
     #   requests
 colorama==0.4.6
     # via commitizen
-commitizen==4.7.0
+commitizen==4.8.2
     # via hatch.envs.dev
-decli==0.6.2
+decli==0.6.3
     # via commitizen
 distlib==0.3.9
     # via virtualenv
@@ -41,7 +41,7 @@ dynaconf==3.2.11
     # via tempo-core
 filelock==3.18.0
     # via virtualenv
-flet==0.28.2
+flet==0.28.3
     # via hatch.envs.dev
 h11==0.16.0
     # via httpcore
@@ -49,7 +49,7 @@ httpcore==1.0.9
     # via httpx
 httpx==0.28.1
     # via flet
-identify==2.6.10
+identify==2.6.12
     # via pre-commit
 idna==3.10
     # via
@@ -85,10 +85,6 @@ psutil==7.0.0
     # via tempo-core
 py-project-dev-tools @ git+https://github.com/Mythical-Github/py_project_dev_tools@4c90459d55182759c2abf0a0f35e636b8475add8
     # via hatch.envs.dev
-pygetwindow==0.0.9
-    # via
-    #   hatch.envs.dev
-    #   tempo-core
 pygments==2.19.1
     # via rich
 pyinstaller==6.13.0
@@ -97,10 +93,9 @@ pyinstaller-hooks-contrib==2025.4
     # via pyinstaller
 pymonctl==0.92
     # via pywinctl
-pyrect==0.2.0
-    # via pygetwindow
 pywin32==310
     # via
+    #   hatch.envs.dev
     #   pymonctl
     #   pywinbox
     #   pywinctl
@@ -131,7 +126,7 @@ screeninfo==0.8.1
     # via
     #   hatch.envs.dev
     #   tempo-core
-setuptools==80.7.1
+setuptools==80.9.0
     # via
     #   pyinstaller
     #   pyinstaller-hooks-contrib
@@ -139,7 +134,7 @@ six==1.17.0
     # via repath
 sniffio==1.3.1
     # via anyio
-tempo-core @ git+https://github.com/Tempo-Organization/tempo_core@9b8b72113d1adc45df67d2a0a48eb27032dfc866
+tempo-core @ git+https://github.com/Tempo-Organization/tempo_core@5fb3522369c706f3b862a227a0559f248ddd72c3
     # via hatch.envs.dev
 termcolor==2.5.0
     # via commitizen
@@ -147,7 +142,7 @@ tomlkit==0.13.2
     # via
     #   commitizen
     #   tempo-core
-typing-extensions==4.13.2
+typing-extensions==4.14.0
     # via
     #   pymonctl
     #   pywinbox

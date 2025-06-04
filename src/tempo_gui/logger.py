@@ -10,6 +10,7 @@ class Logger:
 
     @classmethod
     def log_message(cls, message: str):
+        print(message)
         if cls._log_view:
             cls._log_view.controls.append(ft.Text(value=message, size=12))
             cls._log_view.update()

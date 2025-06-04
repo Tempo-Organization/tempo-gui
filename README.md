@@ -58,12 +58,11 @@ All tools it installs, are under there own respective licenses.
 
 
 ### Technologies:
-- **[Flet](github.com/flet-dev/flet)** - Flet enables developers to easily build realtime web, mobile and desktop apps in Python. No frontend experience required.
+- **[Flet](https://github.com/flet-dev/flet)** - Flet enables developers to easily build realtime web, mobile and desktop apps in Python. No frontend experience required.
 - **[Hatch](https://github.com/pypa/hatch)** - Modern project management tool for Python.
 - **[UV](https://github.com/astral-sh/uv)** - An extremely fast Python package and project manager, written in Rust.
 - **[PyInstaller](https://github.com/pyinstaller/pyinstaller)** - Tool to convert Python programs into standalone executables.
 - **[Ruff](https://github.com/astral-sh/ruff)** - Fast Python linter and code formatting tool.
-- **[PyProjectDevTools](https://github.com/Mythical-Github/py_project_dev_tools)** - A set of generic tools for Python applications, using Hatch, UV, and PyInstaller.
 - **[Pyright](https://github.com/microsoft/pyright)** - A fast type checker for Python.
 - **[Precommit](https://github.com/pre-commit/pre-commit)** - A framework for managing and maintaining multi-language pre-commit hooks.
 - **[Commitizen](https://github.com/commitizen-tools/commitizen)** - A tool to help you write consistent commit messages, and manage versioning.

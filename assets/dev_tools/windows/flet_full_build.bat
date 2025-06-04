@@ -1,23 +1,27 @@
-@echo off
-cd /d "%~dp0..\..\.."
+@echo on
 
-:: Clean previous builds
-hatch run scripts:clean
+cd /d "%~dp0"
 
-:: Create dev environment
-hatch env create dev
+call install_hatch.bat
 
-:: Pack the application
-hatch run flet pack "%CD%\src\tempo_gui\__main__.py" --hidden-import=textual.widgets._tab --name tempo_gui
+cd /d "..\..\.."
 
-:: Set source and destination paths (NO spaces around '=')
-set "before_file=%CD%\dist\tempo_gui.exe"
+set "dist_dir=%CD%\dist"
+
+if exist "%dist_dir%" (rmdir /s /q "%dist_dir%")
+
+set "build_dir=%CD%\build"
+
+if exist "%build_dir%" (rmdir /s /q "%build_dir%")
+
+hatch run flet pack "%CD%\src\tempo_gui\__main__.py" --name tempo_gui
+
+set "before_file=%dist_dir%\tempo_gui.exe"
+
 set "after_file=%CD%\assets\base\tempo_gui.exe"
 
-:: Copy the packed executable
-copy "%before_file%" "%after_file%"
+if exist "%before_file%" (copy /Y "%before_file%" "%after_file%")
 
-:: Call the newly copied executable
-call "%after_file%" --use_browser
+if exist "%after_file%" (call "%after_file%")
 
 exit /b

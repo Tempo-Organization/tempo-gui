@@ -13,7 +13,15 @@ log_path = os.path.normpath(
 )
 
 
+def ensure_log_file_exists():
+    log_dir = os.path.dirname(log_path)
+    os.makedirs(log_dir, exist_ok=True)
+    if not os.path.exists(log_path):
+        open(log_path, 'a', encoding='utf-8').close()
+
+
 def monitor_log():
+    ensure_log_file_exists()
     try:
         with open(log_path, "r", encoding="utf-8") as f:
             f.seek(0, os.SEEK_END)
@@ -23,8 +31,6 @@ def monitor_log():
                     logger.Logger.log_message(line.rstrip())
                 else:
                     time.sleep(0.1)
-    except FileNotFoundError:
-        logger.Logger.log_message(f"[Log Monitor] File not found: {log_path}")
     except Exception as e:
         logger.Logger.log_message(f"[Log Monitor] Error: {e}")
 
