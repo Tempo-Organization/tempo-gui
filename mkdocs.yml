@@ -1,0 +1,54 @@
+site_name: Tempo GUI
+site_url: https://tempo-organization.github.io/tempo-gui/
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+  icon:
+    logo: fontawesome/solid/t
+    repo: fontawesome/brands/github
+  palette:
+    # Auto toggle for the user to switch between modes based on system preference
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to system preference
+
+    # Default Dark Mode (for users who have dark mode preference)
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Dark mode
+      primary: deep purple
+      accent: cyan
+
+    # Default Light Mode (for users who have light mode preference)
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Light mode
+      primary: deep purple
+      accent: cyan
+
+nav:
+  - Home: index.md
+  - Development Guide: development_guide.md
+
+
+extra_css:
+  - stylesheets/extra.css
+
+repo_url: https://github.com/Tempo-Organization/tempo-gui
+repo_name: tempo-gui
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Tempo-Organization/tempo-gui
+      name: Tempo GUI on Github
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/EvUuAD4QvS
+      name: Tempo GUI Discord Server

@@ -1,11 +1,9 @@
 
 Test:
-    use flet pack instead of Build
-    fix missing icon for flet pack
     fix log not working in exe version
-    fix run game and test mods all not working in exe version
 
     Automated Builds via ci
-    reupload whole project under ver 0.0.1 under tempo org
 
-    running test mods all and run game seem to mess up the config in exe mode
+    reupload whole project under ver 0.1.0 under tempo org
+
+    deal with tempo slowdown, maybe make a loading screen or something

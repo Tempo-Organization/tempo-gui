@@ -4,7 +4,7 @@ This is an gui multi-tool for [Tempo](https://github.com/Tempo-Organization/temp
 
 
 ### Download
-- Click [here](https://github.com/Mythical-Github/tempo_gui/releases/latest) to be redirected to the latest prebuilt release.
+- Click [here](https://github.com/Mythical-Github/tempo-gui/releases/latest) to be redirected to the latest prebuilt release.
 
 
 ### Project Example:
@@ -28,11 +28,11 @@ If you have any problems, suggestions, or just want to chat, feel free to join t
 
 
 ### Suggestions
-If you have ideas or suggestions for the tool feel free to open a [suggestions issue](https://github.com/Mythical-Github/tempo_gui/issues) or mention it in the discord.
+If you have ideas or suggestions for the tool feel free to open a [suggestions issue](https://github.com/Mythical-Github/tempo-gui/issues) or mention it in the discord.
 
 
 ### Bug Reports
-If you encounter a bug or issue, please submit a report on the [issues page](https://github.com/Mythical-Github/tempo_gui/issues).
+If you encounter a bug or issue, please submit a report on the [issues page](https://github.com/Mythical-Github/tempo-gui/issues).
 When creating an issue, please provide as much information as possible, including:
 - Steps to reproduce the issue
 - What you expect to happen, versus what is happening
@@ -59,9 +59,7 @@ All tools it installs, are under there own respective licenses.
 
 ### Technologies:
 - **[Flet](https://github.com/flet-dev/flet)** - Flet enables developers to easily build realtime web, mobile and desktop apps in Python. No frontend experience required.
-- **[Hatch](https://github.com/pypa/hatch)** - Modern project management tool for Python.
 - **[UV](https://github.com/astral-sh/uv)** - An extremely fast Python package and project manager, written in Rust.
-- **[PyInstaller](https://github.com/pyinstaller/pyinstaller)** - Tool to convert Python programs into standalone executables.
 - **[Ruff](https://github.com/astral-sh/ruff)** - Fast Python linter and code formatting tool.
 - **[Pyright](https://github.com/microsoft/pyright)** - A fast type checker for Python.
 - **[Precommit](https://github.com/pre-commit/pre-commit)** - A framework for managing and maintaining multi-language pre-commit hooks.
