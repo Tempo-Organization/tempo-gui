@@ -1,86 +1,58 @@
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
 [project]
-name = "tempo_gui"
+name = "tempo-gui"
 version = "0.1.0"
 description = ""
 readme = "README.md"
-requires-python = ">=3.9.1"
-license = { file = "LICENSE" }
-keywords = []
+requires-python = ">=3.12"
 authors = [
-  { name = "Mythical", email = "MythicalData@gmail.com" },
+    { name = "Flet developer", email = "you@example.com" }
 ]
-classifiers = [
-  "Development Status :: 5 - Production/Stable",
-  "Programming Language :: Python",
-  "Programming Language :: Python :: 3.11",
-  "Programming Language :: Python :: 3.12",
-  "Programming Language :: Python :: 3.13",
-  "Programming Language :: Python :: Implementation :: CPython",
-]
-	dependencies = [
-	  "flet",
-	  "requests",
-	  "screeninfo",
-	  "tempo_core @ git+https://github.com/Tempo-Organization/tempo_core",
-	  "pywin32"
+dependencies = [
+  "flet==0.28.3",
+  "requests>=2.32.4",
+  "screeninfo>=0.8.1",
+  "tempo-core@git+https://github.com/Tempo-Organization/tempo_core",
+  "tomlkit>=0.13.3",
 ]
 
-[tool.hatch.envs.dev]
-dependencies = [
-  "pre-commit",
-  "commitizen",
-  "pyinstaller",
-  "py_project_dev_tools @ git+https://github.com/Mythical-Github/py_project_dev_tools"
+[tool.flet]
+# org name in reverse domain name notation, e.g. "com.mycompany".
+# Combined with project.name to build bundle ID for iOS and Android apps
+org = "com.mycompany"
+
+# project display name that is used as an app title on Android and iOS home screens,
+# shown in window titles and about app dialogs on desktop.
+product = "tempo-gui"
+
+# company name to display in about app dialogs
+company = "Flet"
+
+# copyright text to display in about app dialogs
+copyright = "Copyright (C) 2025 by Flet"
+
+[tool.flet.app]
+path = "src"
+
+[tool.uv]
+dev-dependencies = [
+    "commitizen>=4.8.3",
+    "flet[all]==0.28.3",
+    "pre-commit>=4.2.0",
 ]
+
+[tool.uv.sources]
+tempo-core = { git = "https://github.com/Tempo-Organization/tempo_core" }
+
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.group.dev.dependencies]
+flet = {extras = ["all"], version = "0.28.3"}
 
 [project.urls]
 Documentation = "https://github.com/Mythical-Github/tempo_gui/blob/main/README.md"
 Issues = "https://github.com/Mythical-Github/tempo_gui/issues"
 Source = "https://github.com/Mythical-Github/tempo_gui"
-
-[project.scripts]
-tempo_gui = "tempo_gui.__main__:main"
-
-[tool.hatch.metadata]
-allow-direct-references = true
-
-[tool.hatch.env]
-requires = ["hatch-pip-compile"]
-
-[tool.hatch.envs.default]
-type = "pip-compile"
-path = ".venv"
-pip-compile-resolver = "uv"
-pip-compile-installer = "uv"
-
-[tool.hatch.envs.build]
-template = "build"
-installer = "uv"
-dependencies = [
-  "pyinstaller",
-]
-
-[tool.hatch.envs.build.scripts]
-exe = [
-  "pyinstaller --noconfirm --onefile --console --name tempo_gui --icon=assets/images/project_main_icon.ico src/tempo_gui/__main__.py"
-]
-
-[tool.hatch.envs.scripts]
-template = "scripts"
-detached = true
-installer = "uv"
-
-[tool.hatch.envs.scripts.scripts]
-clean = "git clean -d -X --force"
-refresh-deps = [
-  "hatch env remove default",
-  "python -c \"import os; os.remove('requirements.txt')\"",
-  "hatch env create default",
-]
 
 [tool.pyright]
 extraPaths = [".venv/Lib/site-packages"]
@@ -92,39 +64,6 @@ version_scheme = "semver2"
 version_provider = "pep621"
 update_changelog_on_bump = true
 
-[tool.hatch.build.targets.wheel]
-packages = ["src/tempo_gui"]
-
 [tool.typos]
 [tool.typos.default]
 extend-words = { ue4ss = "ue4ss", ue = "ue" }
-
-[tool.flet]
-# org name in reverse domain name notation, e.g. "com.mycompany".
-# Combined with project.name to build bundle ID for iOS and Android apps
-org = "com.tempo_gui"
-
-# project display name that is used as an app title on Android and iOS home screens,
-# shown in window titles and about app dialogs on desktop.
-product = "tempo_gui"
-
-# company name to display in about app dialogs
-company = "Tempo-Organization"
-
-# copyright text to display in about app dialogs
-copyright = "Copyright (C) 2025 by Tempo-Organization"
-
-[tool.flet.app]
-path = "src/tempo_gui"
-
-[tool.uv]
-dev-dependencies = [
-    "flet[all]==0.28.2",
-]
-reinstall-package = ["tempo_core"]
-
-[tool.poetry]
-package-mode = false
-
-[tool.poetry.group.dev.dependencies]
-flet = {extras = ["all"], version = "0.28.2"}
