@@ -11,7 +11,7 @@ dependencies = [
   "flet==0.28.3",
   "requests>=2.32.4",
   "screeninfo>=0.8.1",
-  "tempo-core@git+https://github.com/Tempo-Organization/tempo_core",
+  "tempo-core@git+https://github.com/Tempo-Organization/tempo-core",
   "tomlkit>=0.13.3",
 ]
 
@@ -41,7 +41,7 @@ dev-dependencies = [
 ]
 
 [tool.uv.sources]
-tempo-core = { git = "https://github.com/Tempo-Organization/tempo_core" }
+tempo-core = { git = "https://github.com/Tempo-Organization/tempo-core" }
 
 [tool.poetry]
 package-mode = false
@@ -50,9 +50,9 @@ package-mode = false
 flet = {extras = ["all"], version = "0.28.3"}
 
 [project.urls]
-Documentation = "https://github.com/Mythical-Github/tempo_gui/blob/main/README.md"
-Issues = "https://github.com/Mythical-Github/tempo_gui/issues"
-Source = "https://github.com/Mythical-Github/tempo_gui"
+Documentation = "https://github.com/Mythical-Github/tempo-gui/blob/main/README.md"
+Issues = "https://github.com/Mythical-Github/tempo-gui/issues"
+Source = "https://github.com/Mythical-Github/tempo-gui"
 
 [tool.pyright]
 extraPaths = [".venv/Lib/site-packages"]

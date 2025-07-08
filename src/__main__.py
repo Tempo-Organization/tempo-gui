@@ -469,7 +469,7 @@ def add_log_section(page: ft.Page):
 
     log_text_scroll_box = ft.ListView(expand=True, auto_scroll=True)
     logger.Logger.init_logger(logging_scroll_box=log_text_scroll_box)
-    from tempo_gui import log_thread
+    import log_thread
 
     log_thread.init_log_thread()
 
