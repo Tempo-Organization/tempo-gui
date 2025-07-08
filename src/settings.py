@@ -14,6 +14,7 @@ import tempo
 has_inited_settings = False
 
 SETTINGS_FILE = os.path.normpath(f"{file_io.SCRIPT_DIR}/settings.toml")
+print(f"tempo-gui settings file: {SETTINGS_FILE}")
 
 
 def is_windows():

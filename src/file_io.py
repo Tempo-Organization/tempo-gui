@@ -9,6 +9,7 @@ SCRIPT_DIR = (
     if getattr(sys, "frozen", False)
     else pathlib.Path(__file__).resolve().parent
 )
+print(f"Script directory: {SCRIPT_DIR}")
 
 
 def download_file(url, destination_path):

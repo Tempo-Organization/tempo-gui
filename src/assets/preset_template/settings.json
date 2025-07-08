@@ -31,11 +31,11 @@
     "unreal_engine_dir": "C:/Program Files/Epic Games/UE_4.22",
     "unreal_engine_major_version": null,
     "unreal_engine_minor_version": null,
-    "unreal_project_file": "C:/Users/Mythi/Documents/Github/ZedfestModdingKit/KevinSpel.uproject"
+    "unreal_project_file": "Z:/Github/ZedfestModdingKit/KevinSpel.uproject"
   },
   "exec_events": [],
   "game_info": {
-    "game_exe_path": "D:/SteamLibrary/steamapps/common/Zedfest/KevinSpel/Binaries/Win64/Zedfest.exe",
+    "game_exe_path": "C:/Program Files (x86)/Steam/steamapps/common/Zedfest/KevinSpel/Binaries/Win64/Zedfest.exe",
     "game_id": null,
     "game_launcher_exe": null,
     "launch_params": [
@@ -50,11 +50,11 @@
   "general_info": {
     "override_default_working_dir": true,
     "window_title": "tempo automation script",
-    "working_dir": "C:/Users/Mythi/Downloads/Output"
+    "working_dir": "Z:/Output"
   },
   "git_info": {
     "repo_branch": "main",
-    "repo_path": "C:/Users/Mythi/Documents/GitHub/ZedfestModdingKit"
+    "repo_path": "Z:/Github/ZedfestModdingKit"
   },
   "mods_info": [
     {
