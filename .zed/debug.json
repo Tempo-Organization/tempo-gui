@@ -1,0 +1,15 @@
+[
+  {
+    "adapter": "Debugpy",
+    "args": [
+      "run",
+      "flet",
+      "run"
+    ],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "justMyCode": false,
+    "label": "Open GUI",
+    "module": "uv",
+    "request": "launch"
+  }
+]

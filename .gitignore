@@ -164,3 +164,4 @@ storage/
 src/settings.toml
 /src/assets/kismet_analyzer
 /src/presets
+/src/assets/umodel

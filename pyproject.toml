@@ -11,7 +11,7 @@ dependencies = [
   "flet==0.28.3",
   "requests>=2.32.4",
   "screeninfo>=0.8.1",
-  "tempo-core@git+https://github.com/Tempo-Organization/tempo-core",
+  "tempo-core",
   "tomlkit>=0.13.3",
 ]
 
@@ -40,10 +40,11 @@ dev-dependencies = [
     "pre-commit>=4.2.0",
     "pyright>=1.1.403",
     "ruff>=0.12.2",
+    "uv>=0.9.13",
 ]
 
 [tool.uv.sources]
-tempo-core = { git = "https://github.com/Tempo-Organization/tempo-core" }
+tempo-core = { git = "https://www.github.com/Tempo-Organization/tempo-core", rev = "unit_testing" }
 
 [tool.poetry]
 package-mode = false
