@@ -12,9 +12,9 @@ def run_app(
     exe_path: str,
     exec_mode: ExecutionMode = ExecutionMode.SYNC,
     args: list[str] | None = None,
-    working_dir: str = os.path.normpath(f"{file_io.SCRIPT_DIR}/working_dir"),
+    temp_dir: str = os.path.normpath(f"{file_io.SCRIPT_DIR}/working_dir"),
 ):
-    os.makedirs(working_dir, exist_ok=True)
+    os.makedirs(temp_dir, exist_ok=True)
 
     if not args:
         args = []
@@ -32,12 +32,12 @@ def run_app(
         logger.Logger.log_message(
             f"Command: {command} running with the {exec_mode} enum"
         )
-        if working_dir and os.path.isdir(working_dir):
-            os.chdir(working_dir)
+        if temp_dir and os.path.isdir(temp_dir):
+            os.chdir(temp_dir)
 
         process = subprocess.Popen(
             command,
-            cwd=working_dir,
+            cwd=temp_dir,
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
             text=True,
@@ -59,4 +59,4 @@ def run_app(
         logger.Logger.log_message(
             f"Command: {command} started with the {exec_mode} enum"
         )
-        subprocess.Popen(command, cwd=working_dir, start_new_session=True)
+        subprocess.Popen(command, cwd=temp_dir, start_new_session=True)
