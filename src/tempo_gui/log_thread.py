@@ -5,7 +5,7 @@ import threading
 import tempo_core
 import tempo_core.logger
 import tempo_core.file_io
-import logger
+from tempo_gui import logger
 
 
 log_path = os.path.normpath(

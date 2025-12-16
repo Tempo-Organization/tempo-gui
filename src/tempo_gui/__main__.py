@@ -11,17 +11,16 @@ import tempo_core
 import tempo_core.app_runner
 import tempo_core.data_structures
 import tempo_core.file_io
-import tempo_core.logger
 import tempo_core.main_logic
 import tempo_core.programs
 import tempo_core.programs.unreal_engine
 import tempo_core.settings
 
-import file_io
-import settings
-import logger
-import initialization
-import tempo as tempo
+from tempo_gui import file_io
+from tempo_gui import settings
+from tempo_gui import logger
+from tempo_gui import initialization
+from tempo_gui import tempo
 
 
 original_webbrowser_open = webbrowser.open
@@ -206,7 +205,7 @@ def open_game_paks_folder(event):
     game_win_64_exe_path = str(tempo_core.settings.get_game_exe_path())
     game_paks_dir = str(
         tempo_core.programs.unreal_engine.get_game_paks_dir(
-            uproject_file_path=tempo_core.settings.get_uproject_file(),
+            uproject_file_path=str(tempo_core.settings.get_uproject_file()),
             game_dir=tempo_core.programs.unreal_engine.get_game_dir(
                 game_win_64_exe_path
             ),
@@ -470,7 +469,7 @@ def add_log_section(page: ft.Page):
 
     log_text_scroll_box = ft.ListView(expand=True, auto_scroll=True)
     logger.Logger.init_logger(logging_scroll_box=log_text_scroll_box)
-    import log_thread
+    from tempo_gui import log_thread
 
     log_thread.init_log_thread()
 

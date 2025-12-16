@@ -2,7 +2,7 @@ import os
 import pathlib
 import requests
 
-import file_io
+from tempo_gui import file_io
 
 
 def get_latest_tempo_version() -> str:

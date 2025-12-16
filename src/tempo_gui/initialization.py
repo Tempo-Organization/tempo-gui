@@ -6,10 +6,10 @@ import tempo_core
 import tempo_core.initialization
 import tempo_core.app_runner
 
-import settings
-import file_io
-import tempo
-import app_runner
+from tempo_gui import settings
+from tempo_gui import file_io
+from tempo_gui import tempo
+from tempo_gui import app_runner
 
 has_completed_tempo_init = False
 
