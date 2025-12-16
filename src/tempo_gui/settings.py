@@ -7,8 +7,8 @@ import tomlkit
 import platform
 from screeninfo import get_monitors
 
-import file_io
-import tempo
+from tempo_gui import file_io
+from tempo_gui import tempo
 
 
 has_inited_settings = False

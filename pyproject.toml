@@ -70,3 +70,10 @@ update_changelog_on_bump = true
 [tool.typos]
 [tool.typos.default]
 extend-words = { ue4ss = "ue4ss", ue = "ue" }
+
+[build-system]
+requires = ["uv_build>=0.7.19,<0.8"]
+build-backend = "uv_build"
+
+[project.scripts]
+tempo_cli = "tempo_gui.__main__:main"

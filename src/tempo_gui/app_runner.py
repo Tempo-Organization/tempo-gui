@@ -3,9 +3,9 @@ from __future__ import annotations
 import os
 import subprocess
 
-import file_io
+from tempo_gui import file_io
 from tempo_core.data_structures import ExecutionMode
-import logger
+from tempo_gui import logger
 
 
 def run_app(
